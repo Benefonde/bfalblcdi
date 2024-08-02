@@ -1,2 +1,2 @@
-# bfalblcdi
- A BFDI fangame which is called  Battle for A Little Bit Less Cool Dream Island
+# Battle for A Little Bit Less Cool Dream Island
+ Insanley WIP right now. Will expand readme later.
