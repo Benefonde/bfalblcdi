@@ -23,7 +23,7 @@ public class OptionsManager : MonoBehaviour
             case 0: funny.isOn = false; break;
             case 1: funny.isOn = true; break;
         }
-        sensetivity.value = PlayerPrefs.GetInt("sensetivity", 20);
+        sensitivity.value = PlayerPrefs.GetInt("sensitivity", 20);
     }
 
     void Update()
@@ -54,11 +54,11 @@ public class OptionsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("funy", 0);
         }
-        PlayerPrefs.SetInt("sensetivity", Mathf.RoundToInt(sensetivity.value));
+        PlayerPrefs.SetInt("sensitivity", Mathf.RoundToInt(sensitivity.value));
     }
 
     public Toggle fullscreen;
     public Toggle freeroam;
     public Toggle funny;
-    public Slider sensetivity;
+    public Slider sensitivity;
 }

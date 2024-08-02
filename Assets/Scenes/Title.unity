@@ -3722,7 +3722,7 @@ GameObject:
   - component: {fileID: 335166579}
   - component: {fileID: 335166580}
   m_Layer: 5
-  m_Name: SensetivitySlider
+  m_Name: SensitivitySlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4683,7 +4683,7 @@ GameObject:
   - component: {fileID: 515649106}
   - component: {fileID: 515649105}
   m_Layer: 5
-  m_Name: Sensetivity
+  m_Name: Sensitivity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14918,7 +14918,7 @@ MonoBehaviour:
   fullscreen: {fileID: 2133661219}
   freeroam: {fileID: 996933760}
   funny: {fileID: 1329625030}
-  sensetivity: {fileID: 335166580}
+  sensitivity: {fileID: 0}
 --- !u!1 &1482376987
 GameObject:
   m_ObjectHideFlags: 0
@@ -17614,7 +17614,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sensetivity
+  m_text: Sensitivity
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fef42916113639a4c9a2a7f377c9e475, type: 2}
   m_sharedMaterial: {fileID: -3979838381760751614, guid: fef42916113639a4c9a2a7f377c9e475,

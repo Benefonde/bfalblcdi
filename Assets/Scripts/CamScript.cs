@@ -6,7 +6,7 @@ public class CamScript : MonoBehaviour
 {
     void Start()
     {
-        sensetivity = PlayerPrefs.GetInt("sensetivity", 20) * 10;
+        sensitivity = PlayerPrefs.GetInt("sensitivity", 20) * 10;
         SwitchState(State.FirstPerson);
     }
 
@@ -14,8 +14,8 @@ public class CamScript : MonoBehaviour
     {
         InputCheck();
 
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensetivity;
-        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensetivity / 1.2f;
+        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity / 1.2f;
 
         yRotation += mouseX;
         xRotation -= mouseY;
@@ -88,7 +88,7 @@ public class CamScript : MonoBehaviour
 
     public GameController gc;
 
-    public float sensetivity;
+    public float sensitivity;
     public Transform player;
 
     float xRotation;
