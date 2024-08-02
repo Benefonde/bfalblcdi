@@ -26,8 +26,9 @@ MonoBehaviour:
   - 2.2
   body: {fileID: 21300000, guid: c8d14f819f82fbf46bd4a5ffeb40fe97, type: 3}
   speed: 14
-  jumpStrength: 12
+  jumpStrength: 8
   arms: 1
+  gravity: 7
   enemy:
   - Golf Ball
   - Needle

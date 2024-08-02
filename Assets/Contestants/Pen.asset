@@ -28,6 +28,7 @@ MonoBehaviour:
   speed: 16
   jumpStrength: 14
   arms: 1
+  gravity: 7
   enemy:
   - Golf Ball
   friend:

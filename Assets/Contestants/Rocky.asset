@@ -15,6 +15,7 @@ MonoBehaviour:
   contestantName: Rocky
   bodyOffset: {x: 0, y: 1.2, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
+  LegX: 2.5
   faceOffset: {x: 0, y: 1.45, z: 0}
   faceSize: 0.25
   armsOffset: {x: 0, y: 0, z: 0}
@@ -27,6 +28,7 @@ MonoBehaviour:
   speed: 4
   jumpStrength: 6
   arms: 0
+  gravity: 7
   enemy:
   - Tennis Ball
   friend: []

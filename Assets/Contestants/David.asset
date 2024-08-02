@@ -28,5 +28,6 @@ MonoBehaviour:
   speed: 14
   jumpStrength: 10
   arms: 1
+  gravity: 7
   enemy: []
   friend: []

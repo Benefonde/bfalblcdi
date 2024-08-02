@@ -28,6 +28,7 @@ MonoBehaviour:
   speed: 12
   jumpStrength: 6
   arms: 1
+  gravity: 6
   enemy: []
   friend:
   - Firey

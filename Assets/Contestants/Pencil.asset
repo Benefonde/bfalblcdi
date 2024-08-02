@@ -28,6 +28,7 @@ MonoBehaviour:
   speed: 14
   jumpStrength: 12
   arms: 1
+  gravity: 7
   enemy:
   - Spongy
   - Golf Ball

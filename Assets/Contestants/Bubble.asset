@@ -15,6 +15,7 @@ MonoBehaviour:
   contestantName: Bubble
   bodyOffset: {x: 0, y: 2.2, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
+  LegX: 2.5
   faceOffset: {x: 0, y: 2.4, z: 0}
   faceSize: 0.3
   armsOffset: {x: 0, y: 1.25, z: 0}
@@ -27,6 +28,7 @@ MonoBehaviour:
   speed: 14
   jumpStrength: 8
   arms: 1
+  gravity: 7
   enemy: []
   friend:
   - Firey

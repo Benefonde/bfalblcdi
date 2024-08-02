@@ -15,7 +15,9 @@ MonoBehaviour:
   contestantName: Woody
   bodyOffset: {x: 0, y: 1.8, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
+  LegX: 2.5
   faceOffset: {x: -0.1, y: 2.1, z: 0}
+  faceSize: 0.3
   armsOffset: {x: 0, y: 1.15, z: 0}
   ArmX: 11
   collision:
@@ -26,6 +28,7 @@ MonoBehaviour:
   speed: 8
   jumpStrength: 6
   arms: 1
+  gravity: 7
   enemy: []
   friend:
   - Teardrop

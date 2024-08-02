@@ -28,6 +28,7 @@ MonoBehaviour:
   speed: 12
   jumpStrength: 12
   arms: 1
+  gravity: 7
   enemy:
   - Bubble
   - Coiny

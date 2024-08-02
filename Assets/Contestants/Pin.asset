@@ -15,6 +15,7 @@ MonoBehaviour:
   contestantName: Pin
   bodyOffset: {x: 0, y: 2.3, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
+  LegX: 2.5
   faceOffset: {x: 0, y: 2.1, z: 0}
   faceSize: 0.3
   armsOffset: {x: 0, y: 1.15, z: 0}
@@ -27,6 +28,7 @@ MonoBehaviour:
   speed: 14
   jumpStrength: 10
   arms: 1
+  gravity: 7
   enemy:
   - Woody
   friend:

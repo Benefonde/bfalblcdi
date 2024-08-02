@@ -7,10 +7,8 @@ public class ContestantScript : MonoBehaviour
 {
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
         csa = GetComponent<ContestantStatApply>();
-        rb.freezeRotation = true;
     }
 
     void Update()
@@ -22,30 +20,14 @@ public class ContestantScript : MonoBehaviour
 
         speed = csa.c.speed;
         jumpForce = csa.c.jumpStrength;
+        gravity = csa.c.gravity;
 
-        grounded = Physics.Raycast(transform.position, Vector3.down, 0.2f, whatIsGround);
-
-        if (grounded)
-        {
-            rb.drag = 7.5f;
-        }
-        else
-        {
-            rb.drag = 5;
-        }
+        grounded = cc.isGrounded;
     }
 
     void UpdatePlayer()
     {
-
-    }
-
-    void FixedUpdate()
-    {
-        if (player)
-        {
-            Movement();
-        }
+        Movement();
     }
 
     void Movement()
@@ -53,42 +35,36 @@ public class ContestantScript : MonoBehaviour
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        Vector3 move = transform.forward * vInput + transform.right * hInput;
+
+        if (grounded && Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            jumpVelocity = jumpForce / 5.5f;
         }
 
-        float spd = speed;
+        if (!grounded)
+        {
+            jumpVelocity -= gravity * Time.deltaTime;
+        }
+        else if (jumpVelocity < 0)
+        {
+            jumpVelocity = -2f;
+        }
+
+        move.y = jumpVelocity;
+
+        cc.Move(move * Time.deltaTime * speed);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            spd = speed * 1.5f;
+            speed = csa.c.speed * 1.5f;
         }
         else
         {
-            spd = speed;
+            speed = csa.c.speed;
         }
 
-        spdTxt.text = Mathf.Round(spd).ToString();
-
-        moveDir = transform.forward * vInput + transform.right * hInput;
-
-        rb.AddForce(moveDir.normalized * spd * 7.5f, ForceMode.Force);
-
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-
-        if (flatVel.magnitude > speed)
-        {
-            Vector3 limitVel = flatVel.normalized * speed;
-            rb.velocity = new Vector3(limitVel.x, rb.velocity.y, limitVel.z);
-        }
-    }
-
-    void Jump()
-    {
-        rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-
-        rb.AddForce(transform.up * jumpForce * 1.35f, ForceMode.Impulse);
+        spdTxt.text = Mathf.Round(speed).ToString();
     }
 
     ContestantStatApply csa;
@@ -97,12 +73,13 @@ public class ContestantScript : MonoBehaviour
 
     public float speed;
     public float jumpForce;
+    public float gravity;
 
     Vector3 moveDir;
+    float jumpVelocity;
 
     public TMP_Text spdTxt;
 
-    Rigidbody rb;
     CharacterController cc;
     public LayerMask whatIsGround;
     bool grounded;

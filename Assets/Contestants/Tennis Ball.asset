@@ -15,7 +15,9 @@ MonoBehaviour:
   contestantName: Tennis Ball
   bodyOffset: {x: 0, y: 2.2, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
+  LegX: 2.5
   faceOffset: {x: 0, y: 2.5, z: 0}
+  faceSize: 0.3
   armsOffset: {x: 0, y: 0, z: 0}
   ArmX: 0
   collision:
@@ -26,6 +28,7 @@ MonoBehaviour:
   speed: 10
   jumpStrength: 10
   arms: 0
+  gravity: 7
   enemy: []
   friend:
   - Golf Ball

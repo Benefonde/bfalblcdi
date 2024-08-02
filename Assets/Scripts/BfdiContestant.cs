@@ -18,6 +18,7 @@ public class BfdiContestant : ScriptableObject
     public int speed; // How fast can they go [1.5x faster when running]
     public int jumpStrength; // How far can it jump
     public bool arms; // Do they have arms
+    public float gravity; // Some contestants weigh like a feather and some like a heavier feather
     public string[] enemy;
     public string[] friend;
 }

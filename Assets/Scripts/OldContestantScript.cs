@@ -7,11 +7,9 @@ public class OldContestantScript : MonoBehaviour
 {
     void Start()
     {
-        csa = GetComponent<ContestantStatApply>();
-        speed = csa.c.speed;
-        jumpForce = csa.c.jumpStrength;
         rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
+        csa = GetComponent<ContestantStatApply>();
         rb.freezeRotation = true;
     }
 
@@ -21,6 +19,9 @@ public class OldContestantScript : MonoBehaviour
         {
             UpdatePlayer();
         }
+
+        speed = csa.c.speed;
+        jumpForce = csa.c.jumpStrength;
 
         grounded = Physics.Raycast(transform.position, Vector3.down, 0.2f, whatIsGround);
 
@@ -87,7 +88,7 @@ public class OldContestantScript : MonoBehaviour
     {
         rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
 
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        rb.AddForce(transform.up * jumpForce * 1.35f, ForceMode.Impulse);
     }
 
     ContestantStatApply csa;
