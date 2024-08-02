@@ -26,8 +26,8 @@ MonoBehaviour:
   - 2.35
   body: {fileID: 21300000, guid: c03702e42cbcf0b4f83e6cb47eacd8e3, type: 3}
   speed: 4
-  jumpStrength: 2
+  jumpStrength: 4
   arms: 0
-  gravity: 7
+  gravity: 15
   enemy: []
   friend: []

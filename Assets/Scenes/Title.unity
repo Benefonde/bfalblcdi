@@ -1463,7 +1463,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.5
 --- !u!222 &68591336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5415,7 +5415,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 1.5
 --- !u!222 &647800027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10864,7 +10864,7 @@ MonoBehaviour:
     The gameplay is simmilar to object  shows - you participate in contests, and there
     are eliminations untill one is declared as the winner.
 
-    Press WASD to walk around, Left Shift to run and Space to jump.'
+    Press WASD to walk around, Left Shift to run, Space to jump and F5 to change perspective.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fef42916113639a4c9a2a7f377c9e475, type: 2}
   m_sharedMaterial: {fileID: -3979838381760751614, guid: fef42916113639a4c9a2a7f377c9e475,
@@ -10934,10 +10934,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1258633704}
-    characterCount: 476
+    characterCount: 502
     spriteCount: 0
-    spaceCount: 105
-    wordCount: 79
+    spaceCount: 109
+    wordCount: 83
     linkCount: 0
     lineCount: 11
     pageCount: 1

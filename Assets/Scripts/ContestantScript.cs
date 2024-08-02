@@ -28,6 +28,11 @@ public class ContestantScript : MonoBehaviour
     void UpdatePlayer()
     {
         Movement();
+
+        if (transform.position.y <= -60)
+        {
+            transform.position = new Vector3(0, 10, 0);
+        }
     }
 
     void Movement()
