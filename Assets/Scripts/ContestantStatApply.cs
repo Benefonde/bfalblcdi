@@ -26,6 +26,7 @@ public class ContestantStatApply : MonoBehaviour
         cImage.sprite = c.body;
         stats[0].text = c.speed.ToString();
         stats[1].text = c.jumpStrength.ToString();
+        stats[2].text = c.gravity.ToString();
         noArms.SetActive(!c.arms);
         if (c.name == "David")
         {
@@ -52,7 +53,7 @@ public class ContestantStatApply : MonoBehaviour
     public BfdiContestant c;
 
     public Image cImage;
-    public TMP_Text[] stats; // 0 spd 1 jmpstr
+    public TMP_Text[] stats; // 0 spd 1 jmpstr 2 grvty
     public GameObject noArms;
 
     public SpriteRenderer sprRenderer;

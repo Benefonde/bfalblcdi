@@ -28,7 +28,7 @@ MonoBehaviour:
   speed: 14
   jumpStrength: 12
   arms: 1
-  gravity: 7
+  gravity: 6
   enemy:
   - Woody
   friend: []
