@@ -18,11 +18,13 @@ public class GameController : MonoBehaviour
         {
             if (!pauseMenu.activeSelf)
             {
+                CursorLock(false);
                 Time.timeScale = 0;
                 pauseMenu.SetActive(true);
             }
             else
             {
+                CursorLock(true);
                 Time.timeScale = 1;
                 pauseMenu.SetActive(false);
             }
