@@ -1,4 +1,4 @@
-﻿Shader "Custom/OneSidedShader"
+﻿Shader "Custom/OneSidedSprite"
 {
     Properties
     {
@@ -27,37 +27,59 @@
             ZWrite Off
             Blend One OneMinusSrcAlpha
 
-            CGPROGRAM
-            #pragma surface surf Lambert vertex:vert nofog nolightmap nodynlightmap keepalpha noinstancing
-            #pragma multi_compile_local _ PIXELSNAP_ON
-            #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
-            #include "UnitySprites.cginc"
-
-            struct Input
+            Pass
             {
-                float2 uv_MainTex;
-                fixed4 color;
-            };
+                CGPROGRAM
+                #pragma vertex vert
+                #pragma fragment frag
+                #include "UnityCG.cginc"
 
-            void vert(inout appdata_full v, out Input o)
-            {
-                v.vertex = UnityFlipSprite(v.vertex, _Flip);
+                struct appdata_t
+                {
+                    float4 vertex : POSITION;
+                    float2 texcoord : TEXCOORD0;
+                    fixed4 color : COLOR;
+                };
 
-                #if defined(PIXELSNAP_ON)
-                v.vertex = UnityPixelSnap(v.vertex);
-                #endif
+                struct v2f
+                {
+                    float2 uv : TEXCOORD0;
+                    fixed4 color : COLOR;
+                    float4 vertex : SV_POSITION;
+                };
 
-                UNITY_INITIALIZE_OUTPUT(Input, o);
-                o.color = v.color * _Color * _RendererColor;
+                sampler2D _MainTex;
+                float4 _MainTex_ST;
+                fixed4 _Color;
+                fixed4 _RendererColor;
+                float4 _Flip;
+
+                v2f vert(appdata_t v)
+                {
+                    v2f o;
+                    float4 pos = v.vertex;
+
+                    // Apply flipping
+                    pos.xy *= _Flip.xy;
+
+                    o.vertex = UnityObjectToClipPos(pos);
+
+                    #if defined(PIXELSNAP_ON)
+                    o.vertex = UnityPixelSnap(o.vertex);
+                    #endif
+
+                    o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+                    o.color = v.color * _Color * _RendererColor;
+                    return o;
+                }
+
+                fixed4 frag(v2f i) : SV_Target
+                {
+                    fixed4 texColor = tex2D(_MainTex, i.uv);
+                    return texColor * i.color;
+                }
+                ENDCG
             }
-
-            void surf(Input IN, inout SurfaceOutput o)
-            {
-                fixed4 c = SampleSpriteTexture(IN.uv_MainTex) * IN.color;
-                o.Albedo = c.rgb * c.a;
-                o.Alpha = c.a;
-            }
-            ENDCG
         }
 
             Fallback "Transparent/VertexLit"

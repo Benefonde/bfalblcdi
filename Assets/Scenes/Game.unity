@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1644,7 +1644,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5dab660b3aa87474aac67f7ae5d60e58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db85078e83ea3134db07b800d724df97, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1681,7 +1681,7 @@ Transform:
   m_GameObject: {fileID: 887418537}
   m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
   m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 339806224}
   m_RootOrder: 1
@@ -2001,7 +2001,7 @@ Transform:
   m_GameObject: {fileID: 1089345644}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.25, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.3}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 8.5}
   m_Children: []
   m_Father: {fileID: 1838015641}
   m_RootOrder: 0
@@ -2312,7 +2312,7 @@ Transform:
   m_GameObject: {fileID: 1112615232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.25, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.3}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 8.5}
   m_Children: []
   m_Father: {fileID: 1838015641}
   m_RootOrder: 1
@@ -2885,7 +2885,7 @@ Transform:
   m_GameObject: {fileID: 1424093321}
   m_LocalRotation: {x: 0, y: 0, z: -0.13052624, w: 0.9914449}
   m_LocalPosition: {x: -1.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 339806224}
   m_RootOrder: 0
@@ -3371,6 +3371,7 @@ MonoBehaviour:
   stats:
   - {fileID: 1892621847}
   - {fileID: 1514678344}
+  - {fileID: 208719681}
   noArms: {fileID: 303955207}
   sprRenderer: {fileID: 439403777}
   arms: {fileID: 339806223}

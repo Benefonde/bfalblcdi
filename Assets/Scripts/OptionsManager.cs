@@ -8,7 +8,7 @@ public class OptionsManager : MonoBehaviour
     void Start()
     {
         Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        switch (PlayerPrefs.GetInt("fullscreen", 0))
+        switch (PlayerPrefs.GetInt("fullscreen", 1))
         {
             case 0: fullscreen.isOn = false; Screen.fullScreen = false; break;
             case 1: fullscreen.isOn = true; Screen.fullScreen = true; break;
@@ -17,6 +17,11 @@ public class OptionsManager : MonoBehaviour
         {
             case 0: freeroam.isOn = false; break;
             case 1: freeroam.isOn = true; break;
+        }
+        switch (PlayerPrefs.GetInt("funy", 0))
+        {
+            case 0: funny.isOn = false; break;
+            case 1: funny.isOn = true; break;
         }
         sensetivity.value = PlayerPrefs.GetInt("sensetivity", 20);
     }
@@ -41,10 +46,19 @@ public class OptionsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("freeroam", 0);
         }
+        if (funny.isOn)
+        {
+            PlayerPrefs.SetInt("funy", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("funy", 0);
+        }
         PlayerPrefs.SetInt("sensetivity", Mathf.RoundToInt(sensetivity.value));
     }
 
     public Toggle fullscreen;
     public Toggle freeroam;
+    public Toggle funny;
     public Slider sensetivity;
 }

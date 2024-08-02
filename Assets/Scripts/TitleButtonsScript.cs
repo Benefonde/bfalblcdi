@@ -8,6 +8,10 @@ public class TitleButtonsScript : MonoBehaviour
     public void StartAsCharacter(int character)
     {
         PlayerPrefs.SetInt("Contestant", character);
+        if (PlayerPrefs.GetInt("funy", 0) == 1)
+        {
+            PlayerPrefs.SetInt("Contestant", 5);
+        }
         SceneManager.LoadScene("Game");
     }
 

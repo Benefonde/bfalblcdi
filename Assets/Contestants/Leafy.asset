@@ -16,7 +16,7 @@ MonoBehaviour:
   bodyOffset: {x: 0, y: 2.2, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
   LegX: 2.5
-  faceOffset: {x: 0, y: 3.2, z: 0}
+  faceOffset: {x: 0, y: 2.5, z: 0}
   faceSize: 0.3
   armsOffset: {x: 0, y: 1.25, z: 0}
   ArmX: 10
