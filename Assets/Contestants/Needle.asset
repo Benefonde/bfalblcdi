@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6ed0ea6de739b4ab3ffe99acbf1777, type: 3}
+  m_Name: Needle
+  m_EditorClassIdentifier: 
+  contestantName: Needle
+  bodyOffset: {x: 0, y: 3.2, z: 0}
+  legsOffset: {x: 0, y: 0.35, z: 0}
+  LegX: 1.5
+  faceOffset: {x: 0, y: 3.5, z: 0}
+  faceSize: 0.25
+  armsOffset: {x: 0, y: 2, z: 0}
+  ArmX: 3
+  collision:
+  - 0.5
+  - 5.25
+  - 3.25
+  body: {fileID: 21300000, guid: 1e62419c4cc85004ba8df891e240059e, type: 3}
+  speed: 20
+  jumpStrength: 14
+  arms: 1
+  enemy: []
+  friend:
+  - Coiny
