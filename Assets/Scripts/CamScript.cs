@@ -41,13 +41,11 @@ public class CamScript : MonoBehaviour
         state = stateToDoLol;
         if (state != State.Cutscene)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            gc.CursorLock(true);
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            gc.CursorLock(false);
         }
     }
 
@@ -87,6 +85,8 @@ public class CamScript : MonoBehaviour
     }
 
     State state;
+
+    public GameController gc;
 
     public float sensetivity;
     public Transform player;

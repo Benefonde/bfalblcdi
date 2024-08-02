@@ -10,4 +10,14 @@ public class TitleButtonsScript : MonoBehaviour
         PlayerPrefs.SetInt("Contestant", character);
         SceneManager.LoadScene("Game");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }

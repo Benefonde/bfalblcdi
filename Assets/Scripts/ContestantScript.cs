@@ -9,6 +9,11 @@ public class ContestantScript : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
         csa = GetComponent<ContestantStatApply>();
+        gc = FindObjectOfType<GameController>();
+        if (!csa.c.arms)
+        {
+            gc.AddPoints(GetComponent<ContestantScript>(), 10);
+        }
     }
 
     void Update()
@@ -33,6 +38,9 @@ public class ContestantScript : MonoBehaviour
         {
             transform.position = new Vector3(0, 10, 0);
         }
+
+        pointsText[0].text = $"{points} points";
+        pointsText[1].text = $"{points} points";
     }
 
     void Movement()
@@ -88,4 +96,9 @@ public class ContestantScript : MonoBehaviour
     CharacterController cc;
     public LayerMask whatIsGround;
     bool grounded;
+
+    GameController gc;
+
+    public int points;
+    public TMP_Text[] pointsText;
 }
