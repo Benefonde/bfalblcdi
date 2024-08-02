@@ -18,6 +18,7 @@ public class TitleButtonsScript : MonoBehaviour
 
     public void BackToTitle()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Title");
     }
 }
