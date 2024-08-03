@@ -56,7 +56,7 @@ public class ContestantScript : MonoBehaviour
 
     void UpdateAI()
     {
-        agent.SetDestination(Camera.main.transform.position);
+        agent.SetDestination(gc.player.transform.position);
 
         agent.speed = speed;
     }

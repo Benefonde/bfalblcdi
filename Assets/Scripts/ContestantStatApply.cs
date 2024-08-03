@@ -29,8 +29,8 @@ public class ContestantStatApply : MonoBehaviour
             stats[0].text = c.speed.ToString();
             stats[1].text = c.jumpStrength.ToString();
             stats[2].text = c.gravity.ToString();
+            noArms.SetActive(!c.arms);
         }
-        noArms.SetActive(!c.arms);
         if (c.name == "David")
         {
             transform.Find("Arms").gameObject.SetActive(false);

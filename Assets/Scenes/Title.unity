@@ -15014,7 +15014,7 @@ MonoBehaviour:
   fullscreen: {fileID: 2133661219}
   freeroam: {fileID: 996933760}
   funny: {fileID: 1329625030}
-  sensitivity: {fileID: 0}
+  sensitivity: {fileID: 335166580}
 --- !u!1 &1482376987
 GameObject:
   m_ObjectHideFlags: 0

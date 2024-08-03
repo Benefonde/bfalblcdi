@@ -30,9 +30,20 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Instantiate(contestantAngry, new Vector3(0, 5, 0), Quaternion.identity);
+            Instantiate(contestantAngry, new Vector3(0, -0.3045744f, 0), Quaternion.identity);
+            switch (player.name)
+            {
+                case "Pin": aud.PlayOneShot(pinScream); break;
+                case "Firey": aud.PlayOneShot(fireyScream); break;
+                case "Golf Ball": aud.PlayOneShot(gbScream); break;
+                case "Tennis Ball": aud.PlayOneShot(tbScream); break;
+                case "Ice Cube": aud.PlayOneShot(icScream); break;
+                case "Woody": aud.PlayOneShot(woodyScream); break;
+                case "Teardrop": break;
+                default: aud.PlayOneShot(genericScream); break;
+            }
         }
         
         if (!aud.isPlaying)
@@ -74,6 +85,16 @@ public class GameController : MonoBehaviour
     }
 
     public GameObject pauseMenu;
+
+    public ContestantScript player;
+
+    public AudioClip genericScream;
+    public AudioClip pinScream;
+    public AudioClip gbScream;
+    public AudioClip tbScream;
+    public AudioClip woodyScream;
+    public AudioClip fireyScream;
+    public AudioClip icScream;
 
     public Animator pointsAnimator;
     public TMP_Text[] pointsAnimationText;

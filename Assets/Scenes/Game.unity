@@ -1755,7 +1755,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: db85078e83ea3134db07b800d724df97, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f7554fb7c562e645a0f313539c4fc90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2554,7 +2554,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5dab660b3aa87474aac67f7ae5d60e58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f7554fb7c562e645a0f313539c4fc90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3276,6 +3276,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1368537217}
+  player: {fileID: 1568547841}
+  genericScream: {fileID: 8300000, guid: 2961f6c1383b6ed4c96335510bf13541, type: 3}
+  pinScream: {fileID: 8300000, guid: ccb9ff0f030e66b4895cf53aab7d6f27, type: 3}
+  gbScream: {fileID: 8300000, guid: 088b53005463b70488d005c18ddb3541, type: 3}
+  tbScream: {fileID: 8300000, guid: ae15dc10f47e7fa4884fa7103ccb3180, type: 3}
+  woodyScream: {fileID: 8300000, guid: 96721fc46b9b03d46b6e4c92c134654d, type: 3}
+  fireyScream: {fileID: 8300000, guid: 16e5d36a7050a0b4280126a9384345aa, type: 3}
+  icScream: {fileID: 8300000, guid: 1ff222e3bd06f044b8f83e719f5b7f35, type: 3}
   pointsAnimator: {fileID: 391829802}
   pointsAnimationText:
   - {fileID: 391829803}
@@ -3286,7 +3294,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fe7b75bbeb96cb647a0399375487662a, type: 3}
   - {fileID: 8300000, guid: 624958d8de83ff849ba845c0e5079f20, type: 3}
   - {fileID: 8300000, guid: 8b59819756f63314b9614b0265aa3f13, type: 3}
-  contestantAngry: {fileID: 0}
+  contestantAngry: {fileID: 6302563744788538171, guid: 1bc8f025c4e4d3243b548e78a078d0cd,
+    type: 3}
 --- !u!82 &1446343214
 AudioSource:
   m_ObjectHideFlags: 0
