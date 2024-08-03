@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        aud = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +28,16 @@ public class GameController : MonoBehaviour
                 Time.timeScale = 1;
                 pauseMenu.SetActive(false);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Instantiate(contestantAngry, new Vector3(0, 5, 0), Quaternion.identity);
+        }
+        
+        if (!aud.isPlaying)
+        {
+            aud.PlayOneShot(music[Random.Range(0, music.Length - 1)]);
         }
     }
 
@@ -67,4 +77,9 @@ public class GameController : MonoBehaviour
 
     public Animator pointsAnimator;
     public TMP_Text[] pointsAnimationText;
+
+    AudioSource aud;
+    public AudioClip[] music;
+
+    public GameObject contestantAngry;
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Match
   m_EditorClassIdentifier: 
   contestantName: Match
-  bodyOffset: {x: 0, y: 0, z: 0}
+  bodyOffset: {x: 0, y: 3, z: 0}
   legsOffset: {x: 0, y: 0.35, z: 0}
   LegX: 2.5
   faceOffset: {x: 0, y: 3.2, z: 0}
