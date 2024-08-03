@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
 
 public class ContestantScript : MonoBehaviour
@@ -10,9 +11,15 @@ public class ContestantScript : MonoBehaviour
         cc = GetComponent<CharacterController>();
         csa = GetComponent<ContestantStatApply>();
         gc = FindObjectOfType<GameController>();
+        agent = GetComponent<NavMeshAgent>();
         if (!csa.c.arms)
         {
             gc.AddPoints(GetComponent<ContestantScript>(), 10);
+        }
+        if (!player)
+        {
+            cc.enabled = false;
+            agent.enabled = true;
         }
     }
 
@@ -22,25 +29,36 @@ public class ContestantScript : MonoBehaviour
         {
             UpdatePlayer();
         }
+        else
+        {
+            UpdateAI();
+        }
 
         speed = csa.c.speed;
         jumpForce = csa.c.jumpStrength;
         gravity = csa.c.gravity;
-
-        grounded = cc.isGrounded;
     }
 
     void UpdatePlayer()
     {
         Movement();
 
-        if (transform.position.y <= -60)
+        if (transform.position.y <= -200)
         {
             transform.position = new Vector3(0, 10, 0);
         }
 
         pointsText[0].text = $"{points} points";
         pointsText[1].text = $"{points} points";
+
+        grounded = cc.isGrounded;
+    }
+
+    void UpdateAI()
+    {
+        agent.SetDestination(Camera.main.transform.position);
+
+        agent.speed = speed;
     }
 
     void Movement()
@@ -87,13 +105,12 @@ public class ContestantScript : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float gravity;
-
-    Vector3 moveDir;
     float jumpVelocity;
 
     public TMP_Text spdTxt;
 
     CharacterController cc;
+    NavMeshAgent agent;
     public LayerMask whatIsGround;
     bool grounded;
 
