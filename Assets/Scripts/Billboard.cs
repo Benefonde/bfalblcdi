@@ -11,6 +11,6 @@ public class Billboard : MonoBehaviour
 
 	private void LateUpdate()
 	{
-		base.transform.rotation = Quaternion.Euler(Vector3.up * this.m_Camera.transform.rotation.eulerAngles.y + Vector3.right * 0);
+		base.transform.rotation = Quaternion.Euler(Vector3.up * this.m_Camera.transform.rotation.eulerAngles.y);
 	}
 }
