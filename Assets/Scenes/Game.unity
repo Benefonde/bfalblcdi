@@ -3872,6 +3872,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  votes: 0
   points: 0
   pointsText:
   - {fileID: 1655592034}

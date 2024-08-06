@@ -98,6 +98,11 @@ public class ContestantScript : MonoBehaviour
         spdTxt.text = Mathf.Round(speed).ToString();
     }
 
+    public void Eliminate()
+    {
+        gameObject.SetActive(false);
+    }
+
     ContestantStatApply csa;
 
     public bool player;
@@ -115,6 +120,8 @@ public class ContestantScript : MonoBehaviour
     bool grounded;
 
     GameController gc;
+
+    public int votes;
 
     public int points;
     public TMP_Text[] pointsText;

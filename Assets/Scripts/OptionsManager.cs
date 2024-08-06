@@ -24,6 +24,7 @@ public class OptionsManager : MonoBehaviour
             case 1: funny.isOn = true; break;
         }
         sensitivity.value = PlayerPrefs.GetInt("sensitivity", 20);
+        volume.value = PlayerPrefs.GetFloat("volume", 0.5f);
     }
 
     void Update()
@@ -55,10 +56,13 @@ public class OptionsManager : MonoBehaviour
             PlayerPrefs.SetInt("funy", 0);
         }
         PlayerPrefs.SetInt("sensitivity", Mathf.RoundToInt(sensitivity.value));
+        PlayerPrefs.SetFloat("volume", volume.value);
+        AudioListener.volume = volume.value;
     }
 
     public Toggle fullscreen;
     public Toggle freeroam;
     public Toggle funny;
     public Slider sensitivity;
+    public Slider volume;
 }
