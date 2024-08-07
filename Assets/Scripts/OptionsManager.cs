@@ -26,13 +26,17 @@ public class OptionsManager : MonoBehaviour
             case 1: funny.isOn = true; break;
         }
         sensitivity.value = PlayerPrefs.GetInt("sensitivity", 20);
-        masterVolume.value = PlayerPrefs.GetFloat("masterVolume", 0.5f);
+        masterVolume.value = PlayerPrefs.GetFloat("masterV", 0.5f);
+        musicVolume.value = PlayerPrefs.GetFloat("musicV", 1);
+        soundVolume.value = PlayerPrefs.GetFloat("soundV", 1);
+        voiceVolume.value = PlayerPrefs.GetFloat("voiceV", 1);
         guiScale.value = PlayerPrefs.GetInt("guiScale", 2);
     }
 
     void CalculateMaxGuiScale()
     {
-        guiScale.maxValue = Mathf.Max(1, Mathf.Min(Mathf.FloorToInt(Screen.width / 640), Mathf.FloorToInt(Screen.height / 480)));
+        guiScale.maxValue = Mathf.Max(1, Mathf.Min(Mathf.FloorToInt(Screen.width / 215), Mathf.FloorToInt(Screen.height / 160)));
+        print(guiScale.maxValue);
     }
 
     void Update()
@@ -67,9 +71,9 @@ public class OptionsManager : MonoBehaviour
         PlayerPrefs.SetInt("sensitivity", Mathf.RoundToInt(sensitivity.value));
         PlayerPrefs.SetInt("guiScale", Mathf.RoundToInt(guiScale.value));
         PlayerPrefs.SetFloat("masterV", masterVolume.value);
-        PlayerPrefs.SetFloat("musicV", masterVolume.value);
-        PlayerPrefs.SetFloat("soundV", masterVolume.value);
-        PlayerPrefs.SetFloat("voiceV", masterVolume.value);
+        PlayerPrefs.SetFloat("musicV", musicVolume.value);
+        PlayerPrefs.SetFloat("soundV", soundVolume.value);
+        PlayerPrefs.SetFloat("voiceV", voiceVolume.value);
         mixer.SetFloat("MasterVol", Mathf.Log10(masterVolume.value) * 20);
         mixer.SetFloat("MusicVol", Mathf.Log10(musicVolume.value) * 20);
         mixer.SetFloat("SoundVol", Mathf.Log10(soundVolume.value) * 20);
