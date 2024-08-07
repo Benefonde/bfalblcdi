@@ -36,14 +36,14 @@ public class GameController : MonoBehaviour
             Instantiate(contestantAngry, new Vector3(0, -0.3045744f, 0), Quaternion.identity);
             switch (player.name)
             {
-                case "Pin": aud.PlayOneShot(pinScream); break;
-                case "Firey": aud.PlayOneShot(fireyScream); break;
-                case "Golf Ball": aud.PlayOneShot(gbScream); break;
-                case "Tennis Ball": aud.PlayOneShot(tbScream); break;
-                case "Ice Cube": aud.PlayOneShot(icScream); break;
-                case "Woody": aud.PlayOneShot(woodyScream); break;
+                case "Pin": playerAud.PlayOneShot(pinScream); break;
+                case "Firey": playerAud.PlayOneShot(fireyScream); break;
+                case "Golf Ball": playerAud.PlayOneShot(gbScream); break;
+                case "Tennis Ball": playerAud.PlayOneShot(tbScream); break;
+                case "Ice Cube": playerAud.PlayOneShot(icScream); break;
+                case "Woody": playerAud.PlayOneShot(woodyScream); break;
                 case "Teardrop": break;
-                default: aud.PlayOneShot(genericScream); break;
+                default: playerAud.PlayOneShot(genericScream); break;
             }
         }
         
@@ -101,6 +101,7 @@ public class GameController : MonoBehaviour
     public TMP_Text[] pointsAnimationText;
 
     AudioSource aud;
+    public AudioSource playerAud;
     public AudioClip[] music;
 
     public GameObject contestantAngry;

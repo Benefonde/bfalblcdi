@@ -14,6 +14,8 @@ public class CamScript : MonoBehaviour
     {
         InputCheck();
 
+        sensitivity = PlayerPrefs.GetInt("sensitivity", 20) * 10;
+
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity / 1.2f;
 
