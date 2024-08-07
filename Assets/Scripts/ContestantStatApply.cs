@@ -16,6 +16,10 @@ public class ContestantStatApply : MonoBehaviour
         {
             c = contestants[Random.Range(0, contestants.Length - 1)];
         }
+        if (PlayerPrefs.GetInt("funy") == 1)
+        {
+            c = contestants[4];
+        }
         print($"{c.name} spawned in");
         transform.name = c.name;
         sprRenderer.sprite = c.body;

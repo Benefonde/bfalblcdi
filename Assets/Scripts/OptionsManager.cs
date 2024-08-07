@@ -35,7 +35,7 @@ public class OptionsManager : MonoBehaviour
 
     void CalculateMaxGuiScale()
     {
-        guiScale.maxValue = Mathf.Max(1, Mathf.Min(Mathf.FloorToInt(Screen.width / 215), Mathf.FloorToInt(Screen.height / 160)));
+        guiScale.maxValue = Mathf.Max(1, Mathf.Min(Mathf.FloorToInt(Screen.width / 320), Mathf.FloorToInt(Screen.height / 240)));
         print(guiScale.maxValue);
     }
 

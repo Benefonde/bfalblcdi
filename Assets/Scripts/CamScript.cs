@@ -28,7 +28,7 @@ public class CamScript : MonoBehaviour
         }
         if (state == State.FirstPerson)
         {
-            xRotation = Mathf.Clamp(xRotation, -95f, 95f);
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         }
 
         if (state != State.Cutscene)
@@ -71,7 +71,7 @@ public class CamScript : MonoBehaviour
 
         if (state == State.FirstPerson)
         {
-            transform.position = player.position + Vector3.up * (player.Find("Face").localPosition.y);
+            transform.position = player.position + Vector3.up * (player.Find("Face").localPosition.y + 0.2f);
         }
         if (state == State.ThirdPerson)
         {
