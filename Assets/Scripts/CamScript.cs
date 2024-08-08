@@ -64,11 +64,44 @@ public class CamScript : MonoBehaviour
                 SwitchState(State.FirstPerson);
             }
         }
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            LMB();
+        }
+    }
+
+    void LMB()
+    {
+        print("lmb");
+
+        RaycastHit h;
+
+        if (Physics.Raycast(transform.position, transform.forward, out h, 5f))
+        {
+            if (h.transform.name == "RMCButton")
+            {
+                hand.SetTrigger("HIT");
+                if (FindObjectsOfType<ContestantScript>().Length < 2)
+                {
+                    return;
+                }
+                for (int i = 0; i < FindObjectsOfType<ContestantScript>().Length; i++)
+                {
+                    if (!FindObjectsOfType<ContestantScript>()[i].player)
+                    {
+                        Destroy(FindObjectsOfType<ContestantScript>()[i].gameObject);
+                    }
+                }
+                h.transform.gameObject.GetComponent<Animator>().SetTrigger("Press");
+                h.transform.gameObject.GetComponent<AudioSource>().Play();
+            }
+        }
+        Debug.DrawRay(transform.position, transform.forward, Color.green, 1);
     }
 
     void LateUpdate()
     {
-
         if (state == State.FirstPerson)
         {
             transform.position = player.position + Vector3.up * (player.Find("Face").localPosition.y + 0.2f);
@@ -95,4 +128,8 @@ public class CamScript : MonoBehaviour
 
     float xRotation;
     float yRotation;
+
+    public Animator hand;
+
+    public AudioClip pop;
 }

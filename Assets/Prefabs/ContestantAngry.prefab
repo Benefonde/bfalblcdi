@@ -1140,6 +1140,7 @@ MonoBehaviour:
   pointsText:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 384874199562670142}
 --- !u!195 &384874200088001574
 NavMeshAgent:
   m_ObjectHideFlags: 0

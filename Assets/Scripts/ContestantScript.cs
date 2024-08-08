@@ -34,6 +34,8 @@ public class ContestantScript : MonoBehaviour
             UpdateAI();
         }
 
+        pointsText[2].text = $"{points} points";
+
         speed = csa.c.speed;
         jumpForce = csa.c.jumpStrength;
         gravity = csa.c.gravity;

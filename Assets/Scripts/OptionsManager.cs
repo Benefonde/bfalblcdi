@@ -62,10 +62,12 @@ public class OptionsManager : MonoBehaviour
         }
         if (funny.isOn)
         {
+            blocky.SetActive(true);
             PlayerPrefs.SetInt("funy", 1);
         }
         else
         {
+            blocky.SetActive(false);
             PlayerPrefs.SetInt("funy", 0);
         }
         PlayerPrefs.SetInt("sensitivity", Mathf.RoundToInt(sensitivity.value));
@@ -85,6 +87,8 @@ public class OptionsManager : MonoBehaviour
     public Toggle funny;
     public Slider sensitivity;
     public Slider guiScale;
+
+    public GameObject blocky;
 
     public Slider masterVolume;
     public Slider musicVolume;
