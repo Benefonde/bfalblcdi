@@ -12,25 +12,25 @@ public class GameController : MonoBehaviour
         aud = GetComponent<AudioSource>();
     }
 
+    public void Pause()
+    {
+        if (!pauseMenu.activeSelf)
+        {
+            CursorLock(false);
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            CursorLock(true);
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!pauseMenu.activeSelf)
-            {
-                CursorLock(false);
-                Time.timeScale = 0;
-                pauseMenu.SetActive(true);
-            }
-            else
-            {
-                CursorLock(true);
-                Time.timeScale = 1;
-                pauseMenu.SetActive(false);
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.P))
         {
             Instantiate(contestantAngry, new Vector3(0, -0.3045744f, 0), Quaternion.identity);

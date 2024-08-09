@@ -12,15 +12,12 @@ public class CamScript : MonoBehaviour
 
     void Update()
     {
-        InputCheck();
+        sensitivity = PlayerPrefs.GetInt("sensitivity", 20);
 
-        sensitivity = PlayerPrefs.GetInt("sensitivity", 20) * 10;
+        Vector2 r = new Vector2(ps.rootate.x, ps.rootate.y) * sensitivity * Time.deltaTime;
 
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensitivity / 1.2f;
-
-        yRotation += mouseX;
-        xRotation -= mouseY;
+        yRotation += r.x;
+        xRotation -= r.y;
 
         if (state == State.ThirdPerson)
         {
@@ -50,31 +47,20 @@ public class CamScript : MonoBehaviour
             gc.CursorLock(false);
         }
     }
-
-    void InputCheck()
+    public void SwitchPerspective()
     {
-        if (Input.GetKeyDown(KeyCode.F5))
+        if (state == State.FirstPerson)
         {
-            if (state == State.FirstPerson)
-            {
-                SwitchState(State.ThirdPerson);
-            }
-            else if (state == State.ThirdPerson)
-            {
-                SwitchState(State.FirstPerson);
-            }
+            SwitchState(State.ThirdPerson);
         }
-        
-        if (Input.GetMouseButtonDown(0))
+        else if (state == State.ThirdPerson)
         {
-            LMB();
+            SwitchState(State.FirstPerson);
         }
     }
 
-    void LMB()
+    public void LMB()
     {
-        print("lmb");
-
         RaycastHit h;
 
         if (Physics.Raycast(transform.position, transform.forward, out h, 5f))
@@ -97,7 +83,6 @@ public class CamScript : MonoBehaviour
                 h.transform.gameObject.GetComponent<AudioSource>().Play();
             }
         }
-        Debug.DrawRay(transform.position, transform.forward, Color.green, 1);
     }
 
     void LateUpdate()
@@ -125,6 +110,7 @@ public class CamScript : MonoBehaviour
 
     public float sensitivity;
     public Transform player;
+    public ContestantScript ps;
 
     float xRotation;
     float yRotation;
