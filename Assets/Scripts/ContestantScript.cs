@@ -9,15 +9,17 @@ public class ContestantScript : MonoBehaviour
 {
     void Awake()
     {
-        controls = new Controller();
-        controls.Gameplay.Enable();
+        if (player)
+        {
+            controls = new PlayerIngame();
+            controls.Gameplay.Enable();
+        }
     }
 
     void Start()
     {
         cc = GetComponent<CharacterController>();
         csa = GetComponent<ContestantStatApply>();
-        gc = FindObjectOfType<GameController>();
         agent = GetComponent<NavMeshAgent>();
         if (!csa.c.arms)
         {
@@ -28,8 +30,11 @@ public class ContestantScript : MonoBehaviour
             cc.enabled = false;
             agent.enabled = true;
         }
-
-        SetControls();
+        else
+        {
+            speed = csa.c.speed;
+            SetControls();
+        }
     }
 
     void SetControls()
@@ -49,11 +54,12 @@ public class ContestantScript : MonoBehaviour
         controls.Gameplay.UseArm.performed += ctx => cam.LMB();
 
         controls.Gameplay.Pause.performed += ctx => gc.Pause();
+        controls.Gameplay.SpawnAngry.performed += ctx => gc.SpawnAngry();
     }
 
     void Jump()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if (grounded)
         {
             jumpVelocity = jumpForce / 5.5f;
         }
@@ -71,8 +77,6 @@ public class ContestantScript : MonoBehaviour
         }
 
         pointsText[2].text = $"{points} points";
-
-        speed = csa.c.speed;
         jumpForce = csa.c.jumpStrength;
         gravity = csa.c.gravity;
     }
@@ -118,15 +122,6 @@ public class ContestantScript : MonoBehaviour
 
         cc.Move(move * Time.deltaTime * speed);
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = csa.c.speed * 1.5f;
-        }
-        else
-        {
-            speed = csa.c.speed;
-        }
-
         spdTxt.text = Mathf.Round(speed).ToString();
     }
 
@@ -151,7 +146,7 @@ public class ContestantScript : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
 
-    GameController gc;
+    public GameController gc;
 
     public int votes;
 
@@ -160,7 +155,7 @@ public class ContestantScript : MonoBehaviour
 
     public CamScript cam;
 
-    public Controller controls;
+    public PlayerIngame controls;
 
     Vector2 moove;
     public Vector2 rootate;

@@ -31,25 +31,26 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Instantiate(contestantAngry, new Vector3(0, -0.3045744f, 0), Quaternion.identity);
-            switch (player.name)
-            {
-                case "Pin": playerAud.PlayOneShot(pinScream); break;
-                case "Firey": playerAud.PlayOneShot(fireyScream); break;
-                case "Golf Ball": playerAud.PlayOneShot(gbScream); break;
-                case "Tennis Ball": playerAud.PlayOneShot(tbScream); break;
-                case "Ice Cube": playerAud.PlayOneShot(icScream); break;
-                case "Woody": playerAud.PlayOneShot(woodyScream); break;
-                case "Teardrop": break;
-                default: playerAud.PlayOneShot(genericScream); break;
-            }
-        }
-        
         if (!aud.isPlaying)
         {
             aud.PlayOneShot(music[Random.Range(0, music.Length - 1)]);
+        }
+    }
+
+    public void SpawnAngry()
+    {
+        GameObject a = Instantiate(contestantAngry, new Vector3(0, -0.3045744f, 0), Quaternion.identity);
+        a.GetComponent<ContestantScript>().gc = gameObject.GetComponent<GameController>();
+        switch (player.name)
+        {
+            case "Pin": playerAud.PlayOneShot(pinScream); break;
+            case "Firey": playerAud.PlayOneShot(fireyScream); break;
+            case "Golf Ball": playerAud.PlayOneShot(gbScream); break;
+            case "Tennis Ball": playerAud.PlayOneShot(tbScream); break;
+            case "Ice Cube": playerAud.PlayOneShot(icScream); break;
+            case "Woody": playerAud.PlayOneShot(woodyScream); break;
+            case "Teardrop": break;
+            default: playerAud.PlayOneShot(genericScream); break;
         }
     }
 

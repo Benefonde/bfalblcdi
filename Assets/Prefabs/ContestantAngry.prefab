@@ -1135,12 +1135,15 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  gc: {fileID: 0}
   votes: 0
   points: 0
   pointsText:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 384874199562670142}
+  cam: {fileID: 0}
+  rootate: {x: 0, y: 0}
 --- !u!195 &384874200088001574
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1148,7 +1151,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384874200088001500}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5

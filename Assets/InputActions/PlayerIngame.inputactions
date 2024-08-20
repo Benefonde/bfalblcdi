@@ -1,5 +1,5 @@
 {
-    "name": "Controller",
+    "name": "PlayerIngame",
     "maps": [
         {
             "name": "Gameplay",
@@ -57,6 +57,14 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "1635c613-4641-4031-a8b9-7428bb754d7f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Spawn Angry",
+                    "type": "Button",
+                    "id": "f84a9371-fe8d-4746-99e2-cde1edcf7f1a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -145,7 +153,7 @@
                     "id": "7457fee4-8f4c-4aeb-834b-8954092bb242",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.8,y=0.8)",
                     "groups": "",
                     "action": "Move",
                     "isComposite": false,
@@ -156,7 +164,7 @@
                     "id": "22b892e9-027a-4b6a-81c4-2a5f3979dba5",
                     "path": "2DVector",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=0.8,y=0.8)",
                     "groups": "",
                     "action": "Move",
                     "isComposite": true,
@@ -211,7 +219,7 @@
                     "id": "a1710da9-1bc4-4d0b-a1e8-8d7e27f0ee92",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=25,y=20)",
+                    "processors": "ScaleVector2(x=20,y=15)",
                     "groups": "",
                     "action": "Rotate",
                     "isComposite": false,
@@ -291,6 +299,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e0ac479-0e6b-4a8a-9f46-caf6b85db58d",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spawn Angry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac9856db-e680-4ff6-8dd2-edc255ac68e5",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Spawn Angry",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/InputActions/Controller.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/InputActions/PlayerIngame.inputactions'
 
 using System;
 using System.Collections;
@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-public class @Controller : IInputActionCollection, IDisposable
+public class @PlayerIngame : IInputActionCollection, IDisposable
 {
     public InputActionAsset asset { get; }
-    public @Controller()
+    public @PlayerIngame()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""Controller"",
+    ""name"": ""PlayerIngame"",
     ""maps"": [
         {
             ""name"": ""Gameplay"",
@@ -70,6 +70,14 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""1635c613-4641-4031-a8b9-7428bb754d7f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Spawn Angry"",
+                    ""type"": ""Button"",
+                    ""id"": ""f84a9371-fe8d-4746-99e2-cde1edcf7f1a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -158,7 +166,7 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""id"": ""7457fee4-8f4c-4aeb-834b-8954092bb242"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2(x=0.8,y=0.8)"",
                     ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": false,
@@ -169,7 +177,7 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""id"": ""22b892e9-027a-4b6a-81c4-2a5f3979dba5"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2(x=0.8,y=0.8)"",
                     ""groups"": """",
                     ""action"": ""Move"",
                     ""isComposite"": true,
@@ -224,7 +232,7 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""id"": ""a1710da9-1bc4-4d0b-a1e8-8d7e27f0ee92"",
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=25,y=20)"",
+                    ""processors"": ""ScaleVector2(x=20,y=15)"",
                     ""groups"": """",
                     ""action"": ""Rotate"",
                     ""isComposite"": false,
@@ -306,6 +314,28 @@ public class @Controller : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6e0ac479-0e6b-4a8a-9f46-caf6b85db58d"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spawn Angry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ac9856db-e680-4ff6-8dd2-edc255ac68e5"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Spawn Angry"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -321,6 +351,7 @@ public class @Controller : IInputActionCollection, IDisposable
         m_Gameplay_UseArm = m_Gameplay.FindAction("Use Arm", throwIfNotFound: true);
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_SpawnAngry = m_Gameplay.FindAction("Spawn Angry", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -377,10 +408,11 @@ public class @Controller : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_UseArm;
     private readonly InputAction m_Gameplay_Run;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_SpawnAngry;
     public struct GameplayActions
     {
-        private @Controller m_Wrapper;
-        public GameplayActions(@Controller wrapper) { m_Wrapper = wrapper; }
+        private @PlayerIngame m_Wrapper;
+        public GameplayActions(@PlayerIngame wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Rotate => m_Wrapper.m_Gameplay_Rotate;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
@@ -388,6 +420,7 @@ public class @Controller : IInputActionCollection, IDisposable
         public InputAction @UseArm => m_Wrapper.m_Gameplay_UseArm;
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @SpawnAngry => m_Wrapper.m_Gameplay_SpawnAngry;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -418,6 +451,9 @@ public class @Controller : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                @SpawnAngry.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnAngry;
+                @SpawnAngry.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnAngry;
+                @SpawnAngry.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSpawnAngry;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -443,6 +479,9 @@ public class @Controller : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @SpawnAngry.started += instance.OnSpawnAngry;
+                @SpawnAngry.performed += instance.OnSpawnAngry;
+                @SpawnAngry.canceled += instance.OnSpawnAngry;
             }
         }
     }
@@ -456,5 +495,6 @@ public class @Controller : IInputActionCollection, IDisposable
         void OnUseArm(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnSpawnAngry(InputAction.CallbackContext context);
     }
 }
