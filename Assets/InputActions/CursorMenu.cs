@@ -23,7 +23,7 @@ public class @CursorMenu : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""7e5dfe9a-362b-4278-933e-3a96943294da"",
                     ""expectedControlType"": """",
-                    ""processors"": """",
+                    ""processors"": ""ScaleVector2(x=1.5,y=1.5)"",
                     ""interactions"": """"
                 },
                 {
