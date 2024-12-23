@@ -25,4 +25,11 @@ public class TitleButtonsScript : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("Title");
     }
+
+    public void SaveGame()
+    {
+        save[PlayerPrefs.GetInt("saveNumber", 1) - 1].SaveJason();
+    }
+
+    public Save[] save;
 }

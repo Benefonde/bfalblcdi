@@ -123,8 +123,8 @@ public class ContestantScript : MonoBehaviour
 
     GameController gc;
 
-    public int votes;
-
     public int points;
     public TMP_Text[] pointsText;
+
+    public Team team;
 }

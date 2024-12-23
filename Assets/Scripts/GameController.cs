@@ -74,12 +74,12 @@ public class GameController : MonoBehaviour
         {
             pointsAnimationText[0].text = $"+{points}";
             pointsAnimationText[1].text = $"+{points}";
-            pointsAnimationText[1].color = new Color(0.5f, 0, 0, 1);
-            if (points > -1)
+            pointsAnimationText[1].color = new Color(0, 0.5f, 0, 1);
+            if (points < 0)
             {
                 pointsAnimationText[0].text = $"-{Mathf.Abs(points)}";
                 pointsAnimationText[1].text = $"-{Mathf.Abs(points)}";
-                pointsAnimationText[1].color = new Color(0, 0.5f, 0, 1);
+                pointsAnimationText[1].color = new Color(0.5f, 0, 0, 1);
             }
             pointsAnimator.SetTrigger("pointsGet");
         }
